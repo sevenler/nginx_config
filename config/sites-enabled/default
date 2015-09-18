@@ -1,0 +1,13 @@
+server {
+    listen       8090;
+    server_name  localhost;
+    root         /Users/songwei/Temp/nginx_config;
+
+	location ~* \.shtml$ {
+            ssi                     on;
+            ssi_silent_errors       on;
+            ssi_types               text/shtml;
+    }
+
+	include  conf.d/php-fpm;
+}
